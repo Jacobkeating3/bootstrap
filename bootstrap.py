@@ -43,3 +43,20 @@ boot_df = pd.DataFrame({'x': boot_stat})
  ggplot(boot_df, aes(x = 'x'))+
  geom_histogram()
 )
+
+
+
+#%%
+
+class BootCI:
+    
+    def __init__ (self, stat, dat, n_boot, boot_stat, ci_level):
+        
+        self.stat = "mean"
+        self.dat = None
+        self.n_boot = 0
+        self.boot_stat = None
+        self.ci_level = .95
+        
+        
+
