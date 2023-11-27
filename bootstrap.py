@@ -57,6 +57,28 @@ class BootCI:
         self.n_boot = 0
         self.boot_stat = None
         self.ci_level = .95
+        self.simulations = []
         
+    def simulation(self):
+        
+        for i in range(n_boot):
+            boot_sample = dat.sample(n_boot, replace = True)
+
+            if stat == "median":   
+                self.simulations.append(float(boot_sample.median()))
+                
+            elif stat == "mean":
+                self.simulations.append(float(boot_sample.mean()))
+            
+            elif stat == "std dev":
+                self.simulations.append(float(boot_sample.std()))
+            else:
+                raise TypeError("Wrong statistic name")
+        
+    def clear_simulation(self):
+        
+        self.simuilations = []
         
 
+        
+        
