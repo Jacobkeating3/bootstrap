@@ -61,11 +61,12 @@ class BootCI:
         
     def load_data(self, dat):
         self.dat = dat
+        self._n = len(self.dat)
     
     def simulation(self):
         
         for i in range(self.n_boot):
-            boot_sample = self.dat.sample(self.n_boot, replace = True)
+            boot_sample = dat.sample(self._n, replace = True)
 
             if stat == "median":   
                 self.simulations.append(float(boot_sample.median()))
