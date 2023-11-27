@@ -61,8 +61,8 @@ class BootCI:
         
     def simulation(self):
         
-        for i in range(n_boot):
-            boot_sample = dat.sample(n_boot, replace = True)
+        for i in range(self.n_boot):
+            boot_sample = self.dat.sample(self.n_boot, replace = True)
 
             if stat == "median":   
                 self.simulations.append(float(boot_sample.median()))
@@ -77,7 +77,7 @@ class BootCI:
         
     def clear_simulation(self):
         
-        self.simuilations = []
+        self.simulations = []
         
 
         
