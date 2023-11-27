@@ -38,7 +38,7 @@ for i in range(n_boot):
         raise TypeError("Wrong statistic name")
 
 boot_df = pd.DataFrame({'x': boot_stat})
-
+ 
 (
  ggplot(boot_df, aes(x = 'x'))+
  geom_histogram()
@@ -50,15 +50,18 @@ boot_df = pd.DataFrame({'x': boot_stat})
 
 class BootCI:
     
-    def __init__ (self, stat, dat, n_boot, boot_stat, ci_level):
+    def __init__ (self, stat, n_boot, boot_stat, ci_level, dat = None):
         
         self.stat = "mean"
-        self.dat = None
+        self.dat = dat
         self.n_boot = 0
         self.boot_stat = None
         self.ci_level = .95
         self.simulations = []
         
+    def load_data(self, dat):
+        self.dat = dat
+    
     def simulation(self):
         
         for i in range(self.n_boot):
