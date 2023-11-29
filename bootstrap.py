@@ -83,6 +83,14 @@ class BootCI:
         
         self.simulations = []
         
+    def set_stat(self, stat):
+        
+        self.stat = stat
+        self.simulation = []
+    
+        
+    
+        
 
         
         
