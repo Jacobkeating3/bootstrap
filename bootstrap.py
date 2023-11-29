@@ -63,7 +63,7 @@ class BootCI:
         self.dat = dat
         self._n = len(self.dat)
     
-    def simulation(self):
+    def simulation(self, n_boot):
         
         for i in range(self.n_boot):
             boot_sample = dat.sample(self._n, replace = True)
